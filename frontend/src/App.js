@@ -21,6 +21,7 @@ class App extends Component {
     var index = newTodoList.indexOf(event.target.value);
     newTodoList.splice(index, 1);
     this.setState({todos: newTodoList});
+    fetch('http://localhost:8000/delete/' + event.target.value);
   };
 
   handleChange = event => {
